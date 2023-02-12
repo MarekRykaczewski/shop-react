@@ -2,9 +2,9 @@ import React from "react";
 
 function Nav() {
   return (
-    <nav className="Nav">
+    <nav className="nav">
         <div>Logo</div>
-        <ul className="Nav-links">
+        <ul className="nav-links">
             <li>Home</li>
             <li>Shop</li>
         </ul>
