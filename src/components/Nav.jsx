@@ -1,12 +1,19 @@
 import React from "react";
+import { Link } from "react-router-dom"
 
 function Nav() {
   return (
     <nav className="nav">
-        <div>Logo</div>
+        <Link to='/'>
+            <div>Logo</div>
+        </Link>
         <ul className="nav-links">
-            <li>Shop</li>
-            <li>Cart</li>
+            <Link to='/shop'>
+                <li>Shop</li>
+            </Link>
+            <Link to='/cart'> 
+                <li>Cart</li>
+            </Link>
         </ul>
     </nav>
   );
