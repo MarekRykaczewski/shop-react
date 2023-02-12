@@ -5,8 +5,8 @@ function Nav() {
     <nav className="nav">
         <div>Logo</div>
         <ul className="nav-links">
-            <li>Home</li>
             <li>Shop</li>
+            <li>Cart</li>
         </ul>
     </nav>
   );
