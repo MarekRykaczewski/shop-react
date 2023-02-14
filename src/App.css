@@ -3,6 +3,18 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   width: 100vw;
   height: 100vh;
+  background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+.App {
+  width: 100%;
+  height: 100%;
+  
 }
 
 .nav {
@@ -75,4 +87,56 @@ body {
 .item-price {
   font-size: 1.2em;
   font-weight: normal;
+}
+
+.home {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main {
+  margin-top: 5rem;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  padding: 50px;
+  display: flex;
+  gap: 50px;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.65);  
+  color: #fff;
+  margin: 40px auto;
+  background-color: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 15px;
+  padding: 32px;
+  backdrop-filter: blur(10px);
+}
+
+.main--text {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  color: rgb(255, 255, 255);
+  text-shadow: 0px 7px 29px rgba(100, 100, 111, 0.2);
+}
+
+.main--title {
+ font-size: 4em;
+ font-weight: bold;
+}
+
+.main--subtitle {
+  font-weight: bold;
+  font-size: 2em;
+}
+
+.main-image {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-radius: 10px;
+  transform: scaleX(-1);
+  object-fit: cover;
+  width: 300px;
+  height: 300px;
 }
