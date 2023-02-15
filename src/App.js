@@ -15,8 +15,22 @@ function App() {
   const [cart, setCart] = React.useState([])
 
   function addToCart(item) {
-    setCart(prevState => [...prevState, item])
+    if (isItemInCart(item) === false) {
+      setCart(prevState => [...prevState, {...item, quantity: 1}])
+    } else if (isItemInCart(item)) {
+      let newCart = [...cart]
+      let itemToIncrement = newCart.find(obj => {
+        return obj.id === item.id
+      })
+      itemToIncrement.quantity++
+      setCart(prevState => [...newCart])
+    }
   }
+
+  function isItemInCart(item) {
+    return cart.find(obj => {
+      return obj.id === item.id
+    }) ? true : false}
 
   return (
     <Router>
