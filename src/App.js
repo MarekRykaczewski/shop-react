@@ -18,8 +18,6 @@ function App() {
     setCart(prevState => [...prevState, item])
   }
 
-  console.log(cart)
-
   return (
     <Router>
       <div className="App">
@@ -27,7 +25,7 @@ function App() {
         <Routes>
           <Route path ="/" element={<Home/>} />
           <Route path ="/shop" element={<Shop data={items}/>} />
-          <Route path ='/cart' element={<Cart/>} />
+          <Route path ='/cart' element={<Cart cart={cart}/>} />
           <Route path="/shop/:id" element={<ItemDetail handleClick={addToCart}/>} />
         </Routes>
       </div>
