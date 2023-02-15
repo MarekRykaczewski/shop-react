@@ -1,12 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import data from "../data"
 
-function Shop() {
+function Shop(props) {
 
-const items = data
-
-const itemElements = items.map(item => (
+const itemElements = props.data.map(item => (
     <div key={item.id}> 
     <Link className="item" to={`/shop/${item.id}`}>
     <span className="item-title"> {item.brand} {item.title} </span>
