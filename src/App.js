@@ -5,6 +5,7 @@ import Shop from './components/Shop';
 import Cart from './components/Cart';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import data from "./data"
+import ItemDetail from './components/ItemDetail';
 
 const items = data
 
@@ -17,6 +18,7 @@ function App() {
           <Route path ="/" element={<Home/>} />
           <Route path ="/shop" element={<Shop data={items}/>} />
           <Route path ='/cart' element={<Cart/>} />
+          <Route path="/shop/:id" element={<ItemDetail/>} />
         </Routes>
       </div>
     </Router>
