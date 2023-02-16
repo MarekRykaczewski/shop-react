@@ -8,12 +8,11 @@ function Cart(props) {
       {item.brand} {item.title}
       <span> ${item.price} </span>
       <span> Quantity: {item.quantity} </span>
-      <div> 
-      <button onClick={() => props.handleIncrementClick(item)}>Add</button>
-      {item.quantity > 1 && <button onClick={() => props.handleDecrementClick(item)}>Sub</button>}
-      <button onClick={() => props.handleDeleteClick(item)}> Delete </button>
+      <div className="cart-buttons"> 
+        <button className="cart-button" onClick={() => props.handleIncrementClick(item)}>Add</button>
+        {item.quantity > 1 && <button className="cart-button" onClick={() => props.handleDecrementClick(item)}>Sub</button>}
+        <button className="cart-button" onClick={() => props.handleDeleteClick(item)}> Delete </button>
       </div>
-
     </div>
 
   ))
