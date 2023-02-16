@@ -18,12 +18,7 @@ function App() {
     if (isItemInCart(item) === false) {
       setCart(prevState => [...prevState, {...item, quantity: 1}])
     } else if (isItemInCart(item)) {
-      let newCart = [...cart]
-      let itemToIncrement = newCart.find(obj => {
-        return obj.id === item.id
-      })
-      itemToIncrement.quantity++
-      setCart(prevState => [...newCart])
+      incrementItem(item)
     }
   }
 
