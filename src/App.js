@@ -22,6 +22,15 @@ function App() {
     }
   }
 
+  function handleQuantityInput (item, event) {
+    let newCart = [...cart]
+    let itemToChange = newCart.find(obj => {
+      return obj.id === item.id
+    })
+    itemToChange.quantity = event.target.value
+    setCart(prevState => [...newCart])
+  }
+
   function isItemInCart(item) {
     return cart.find(obj => {
       return obj.id === item.id
@@ -61,7 +70,7 @@ function App() {
         <Routes>
           <Route path ="/" element={<Home/>} />
           <Route path ="/shop" element={<Shop data={items}/>} />
-          <Route path ='/cart' element={<Cart total={total} cart={cart} handleIncrementClick={incrementItem} handleDecrementClick={decrementItem} handleDeleteClick={deleteItem}/>} />
+          <Route path ='/cart' element={<Cart total={total} cart={cart} handleQuantityInput={handleQuantityInput} handleIncrementClick={incrementItem} handleDecrementClick={decrementItem} handleDeleteClick={deleteItem}/>} />
           <Route path="/shop/:id" element={<ItemDetail handleClick={addToCart}/>} />
         </Routes>
       </div>
