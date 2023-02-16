@@ -10,7 +10,7 @@ function Cart(props) {
       <span> Quantity: {item.quantity} </span>
       <div> 
       <button onClick={() => props.handleIncrementClick(item)}>Add</button>
-      <button>Sub</button>
+      <button onClick={() => props.handleDecrementClick(item)}>Sub</button>
       </div>
 
     </div>
