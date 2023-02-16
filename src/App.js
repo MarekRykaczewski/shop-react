@@ -32,6 +32,16 @@ function App() {
       return obj.id === item.id
     }) ? true : false}
 
+
+  function incrementItem(item) {
+    let newCart = [...cart]
+    let itemToIncrement = newCart.find(obj => {
+      return obj.id === item.id
+    })
+    itemToIncrement.quantity++
+    setCart(prevState => [...newCart])
+  }
+
   return (
     <Router>
       <div className="App">
@@ -39,7 +49,7 @@ function App() {
         <Routes>
           <Route path ="/" element={<Home/>} />
           <Route path ="/shop" element={<Shop data={items}/>} />
-          <Route path ='/cart' element={<Cart cart={cart}/>} />
+          <Route path ='/cart' element={<Cart cart={cart} handleIncrementClick={incrementItem}/>} />
           <Route path="/shop/:id" element={<ItemDetail handleClick={addToCart}/>} />
         </Routes>
       </div>

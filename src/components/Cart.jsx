@@ -9,7 +9,7 @@ function Cart(props) {
       <span> ${item.price} </span>
       <span> Quantity: {item.quantity} </span>
       <div> 
-      <button>Add</button>
+      <button onClick={() => props.handleIncrementClick(item)}>Add</button>
       <button>Sub</button>
       </div>
 
