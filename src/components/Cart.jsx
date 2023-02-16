@@ -18,13 +18,14 @@ function Cart(props) {
   ))
 
   return (
-    <div>
+    <div className="cart-page">
       <div className="cart">
-        {cartElements}
+          {cartElements}
+      </div>
+      <div>
+        <div className="cart-total"> Total: {props.total} </div>
+      </div>
     </div>
-      <div> Total: {props.total} </div>
-    </div>
-
   );
 }
 
