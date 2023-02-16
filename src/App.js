@@ -55,7 +55,7 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Nav />
+        <Nav cartSize={cart.length} />
         <Routes>
           <Route path ="/" element={<Home/>} />
           <Route path ="/shop" element={<Shop data={items}/>} />
