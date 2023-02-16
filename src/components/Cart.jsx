@@ -18,9 +18,13 @@ function Cart(props) {
   ))
 
   return (
-    <div className="cart">
+    <div>
+      <div className="cart">
         {cartElements}
     </div>
+      <div> Total: {props.total} </div>
+    </div>
+
   );
 }
 

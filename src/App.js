@@ -52,6 +52,8 @@ function App() {
     setCart(prevState => [...newCart])
   }
 
+  const total = cart.reduce((accumulator,current) => accumulator + current.price * current.quantity, 0)
+
   return (
     <Router>
       <div className="App">
@@ -59,7 +61,7 @@ function App() {
         <Routes>
           <Route path ="/" element={<Home/>} />
           <Route path ="/shop" element={<Shop data={items}/>} />
-          <Route path ='/cart' element={<Cart cart={cart} handleIncrementClick={incrementItem} handleDecrementClick={decrementItem} handleDeleteClick={deleteItem}/>} />
+          <Route path ='/cart' element={<Cart total={total} cart={cart} handleIncrementClick={incrementItem} handleDecrementClick={decrementItem} handleDeleteClick={deleteItem}/>} />
           <Route path="/shop/:id" element={<ItemDetail handleClick={addToCart}/>} />
         </Routes>
       </div>
