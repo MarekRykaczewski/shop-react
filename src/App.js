@@ -46,6 +46,12 @@ function App() {
     setCart(prevState => [...newCart])
   }
 
+  function deleteItem(item) {
+    let oldCart = [...cart]
+    let newCart = oldCart.filter(obj => obj.id !== item.id)
+    setCart(prevState => [...newCart])
+  }
+
   return (
     <Router>
       <div className="App">
@@ -53,7 +59,7 @@ function App() {
         <Routes>
           <Route path ="/" element={<Home/>} />
           <Route path ="/shop" element={<Shop data={items}/>} />
-          <Route path ='/cart' element={<Cart cart={cart} handleIncrementClick={incrementItem} handleDecrementClick={decrementItem}/>} />
+          <Route path ='/cart' element={<Cart cart={cart} handleIncrementClick={incrementItem} handleDecrementClick={decrementItem} handleDeleteClick={deleteItem}/>} />
           <Route path="/shop/:id" element={<ItemDetail handleClick={addToCart}/>} />
         </Routes>
       </div>

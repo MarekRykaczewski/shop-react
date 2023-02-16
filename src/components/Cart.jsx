@@ -11,6 +11,7 @@ function Cart(props) {
       <div> 
       <button onClick={() => props.handleIncrementClick(item)}>Add</button>
       {item.quantity > 1 && <button onClick={() => props.handleDecrementClick(item)}>Sub</button>}
+      <button onClick={() => props.handleDeleteClick(item)}> Delete </button>
       </div>
 
     </div>
